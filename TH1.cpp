@@ -1,0 +1,41 @@
+#include<iostream>
+#include<algorithm>
+#include<stack>
+#include<vector>
+using namespace std;
+
+int main(){
+	
+		int n;
+	cin >> n;
+	int a[n];
+	for(int i = 0;i < n;i++){
+		cin >> a[i];
+	}
+	int count = 1;
+	vector<string> st;
+	for(int i = 0;i < n;i++){
+		bool check = false;
+		string str = "";
+		for(int j = 0;j < n - i - 1;j++){
+			if(a[j] > a[j + 1]){
+				swap(a[j], a[j + 1]);
+				check = true;
+			}
+		}
+		if(check){
+			str += "Buoc " + to_string(count) + ": ";
+			
+			for(int o = 0;o < n;o++){
+				str += to_string(a[o]) + " ";
+			}
+			st.push_back(str);
+			count++;
+		}
+	}
+	for(int i = 0;i < st.size();i++){
+		cout << st[i]<<endl;
+	}
+	
+	
+}

@@ -1,0 +1,24 @@
+#include<iostream>
+
+using namespace std;
+
+int main(){
+	int q;
+	cin >> q;
+	while(q--){
+		int n, k;
+		cin >> n >> k;
+		
+		int a[n];
+		
+		for(int i = 0;i < n;i++){
+			cin >> a[i];
+			if(a[i] == k){
+				cout << i + 1;
+			
+			}
+		}
+		
+		cout << endl;
+	}
+}
